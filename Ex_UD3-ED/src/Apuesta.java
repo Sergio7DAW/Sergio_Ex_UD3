@@ -227,7 +227,7 @@ public class Apuesta extends javax.swing.JFrame {
     }
     
      /*
-     * Elimina un partido a nuestra aplicación de apuestas
+     * Elimina un partido a nuestro programa de apuestas
      *
      **/
   
