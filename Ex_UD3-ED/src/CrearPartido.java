@@ -1,7 +1,10 @@
 
 import java.awt.event.KeyEvent;
 
-
+ /*
+  * Se crea la clase pública java CrearPartido
+  *
+  **/
 
 public class CrearPartido extends javax.swing.JFrame
 {
@@ -9,6 +12,10 @@ public class CrearPartido extends javax.swing.JFrame
     
     private Apuesta v;
     
+     /*
+      * Se añaden el constructor de clase CrearPartido
+      *
+      **/
    
     public CrearPartido() 
     {
@@ -70,6 +77,12 @@ public class CrearPartido extends javax.swing.JFrame
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    
+     /*
+      * Función para agregar un partido
+      *
+      **/
+    
     public void agregarPartido(String p)
     {
         v.añadePartido(p);
@@ -77,10 +90,20 @@ public class CrearPartido extends javax.swing.JFrame
         tPartido.requestFocus();
     }
     
+     /*
+      * Función para asegurar que la acción agregar un partido se ejecuta correctamente
+      *
+      **/
+    
     private void bAgregarPartidoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bAgregarPartidoActionPerformed
         agregarPartido(tPartido.getText());
     }//GEN-LAST:event_bAgregarPartidoActionPerformed
 
+    /*
+     * Función para detectar que tecla se ha pulsado
+     *
+     **/
+    
     private void tPartidoKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tPartidoKeyPressed
         if( evt.getKeyCode() == KeyEvent.VK_ENTER )
         {

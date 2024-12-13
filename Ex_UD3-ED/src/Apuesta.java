@@ -11,6 +11,10 @@ import javax.swing.WindowConstants;
 
 public class Apuesta extends javax.swing.JFrame {
 
+    /*
+     * Crea una apuesta en nuestro programa de apuestas
+     *
+     */
    
     public Apuesta() 
     {
@@ -120,7 +124,14 @@ public class Apuesta extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    
+    /*
+     * Crea un partido nuevo en nuestro programa de apuestas
+     * Establece en interfaz gráfico interactivo del programa
+     *
+     * @params partidoNuevo crea un partido nuevo
+     **/
+    
     private void bNuevoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bNuevoActionPerformed
         CrearPartido partidoNuevo = new CrearPartido(this);
         partidoNuevo.setDefaultCloseOperation(JDialog.DISPOSE_ON_CLOSE);
@@ -130,21 +141,45 @@ public class Apuesta extends javax.swing.JFrame {
         partidoNuevo.setVisible(Boolean.TRUE);
     }//GEN-LAST:event_bNuevoActionPerformed
 
+    /*
+     * Elimnar el partido creado en nuestro programa de apuestas
+     *
+     **/
+    
     private void bEliminarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bEliminarActionPerformed
         borraPartido(listaQuiniela.getSelectedIndex());
     }//GEN-LAST:event_bEliminarActionPerformed
 
+    /*
+     * Devuelve nuestro programa al estado inicial vacía
+     *
+     * @params modelovacio reestablece la aplicación de apuestas a un estado vacio
+     **/
+    
     private void bResetearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bResetearActionPerformed
         DefaultListModel modelovacio = new DefaultListModel();
         this.listaQuiniela.setModel(modelovacio);
         this.listaResultados.setModel(modelovacio);
     }//GEN-LAST:event_bResetearActionPerformed
 
+    /*
+     * Devuelve una numero int cualquiera aleatorio entre n1 y n2
+     *
+     * @params n1 número int
+     * @params n2 número int
+     * @return la función devuelve un número random redondeado entre n1 y n2
+     **/
    
     public int cualquiera(int n1, int n2)
     {
         return (int)Math.floor((Math.random()*(n2-n1+1) + n1));
     }
+    
+    /*
+     * Función para indentificar el resultado de un partido
+     *
+     * @params partidoresuelto contiene el resultado de un partido
+     **/
     
     private void bRealizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bRealizarActionPerformed
         DefaultListModel modeloquinielaresuelta = new DefaultListModel();
@@ -172,6 +207,11 @@ public class Apuesta extends javax.swing.JFrame {
         this.listaResultados.setModel(modeloquinielaresuelta);
     }//GEN-LAST:event_bRealizarActionPerformed
 
+    /*
+     * Añade un partido a nuestra aplicación de apuestas
+     *
+     * @params modelonuevo inserta un partido nuevo de el programa
+     **/
     
     public void añadePartido(String partido)
     {
@@ -186,6 +226,10 @@ public class Apuesta extends javax.swing.JFrame {
         this.listaQuiniela.setModel(modelonuevo);
     }
     
+     /*
+     * Elimina un partido a nuestra aplicación de apuestas
+     *
+     **/
   
     public void borraPartido(int indice)
     {
